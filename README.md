@@ -44,40 +44,40 @@ This Streamlit-based web application allows users to upload PDF files and conver
    git clone https://github.com/your-repo/pdf-kan-ocr.git
    cd pdf-kan-ocr
 2. Install the required dependencies:
-  ```bash
-    pip install -r requirements.txt
+ 
+    `pip install -r requirements.txt` 
 
-3. Install Tesseract OCR:
+### Install Tesseract OCR
+- For Windows, download the installer from [here](https://github.com/tesseract-ocr/tesseract/releases).
+- Set the path to `tesseract.exe` in your script, e.g., `r'C:\path\to\tesseract.exe'`.
 
-For Windows, download the installer from here.
-- Set the path to tesseract.exe in your script, e.g., r'C:\path\to\tesseract.exe'.
+### Configuration
+Ensure `pytesseract.pytesseract.tesseract_cmd` is set to your Tesseract installation path in the script:
 
-Configuration
-  Ensure pytesseract.pytesseract.tesseract_cmd is set to your Tesseract installation path in the script.
-    ```bash
-    pytesseract.pytesseract.tesseract_cmd = r'C:\path\to\tesseract.exe'
+`pytesseract.pytesseract.tesseract_cmd = r'C:\path\to\tesseract.exe'`
 
-Run the App
+### Run the App
 To start the application, use Streamlit:
-```bash
-  streamlit run app.py
 
-Usage
+` streamlit run app.py`
+
+### Usage
   - Upload a PDF file containing handwritten Kannada text.
   - The system will automatically convert each page to an image.
   - Extracted text will be displayed alongside the images in real-time.
   - Review the extracted Kannada text in the text areas provided for each page.
 
-OCR Results
+### OCR Results
   - The current system uses the pytesseract library with the Kannada language model (lang='kan'). While it works well for some text, you may notice:
 
     - Noise Handling: The system does not currently pre-process noisy PDFs, so you may get poor OCR results for heavily corrupted data.
     - Multi-Column Handling: Bonus points can be earned by improving this feature in future work.
 
-Future Work : 
+### Future Work : 
   
   - Implement noise reduction techniques to improve OCR accuracy for noisy handwritten text.
   - Improve the handling of multi-column PDF layouts.
   - Explore alternative OCR engines or fine-tune the Kannada OCR model for better accuracy.
-License
+    
+### License :
 This project is licensed under the GPLv3 License.
